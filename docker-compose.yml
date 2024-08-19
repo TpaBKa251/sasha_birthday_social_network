@@ -3,13 +3,13 @@ services:
   postgres:
     container_name: postgres
     image: postgres:16
-    hostname: dpg-cr1c183qf0us73flel0g-a
+    hostname: dpg-cr1cmbrqf0us73fll1mg-a
     volumes:
       - ./postgres:/docker-entrypoint-initdb.d
     environment:
-      - POSTGRES_DB=greetings_006i
-      - POSTGRES_USER=greetings_006i_user
-      - POSTGRES_PASSWORD=0w3KpbWU691HEOZRxqaOb5l6Ypv92ssY
+      - POSTGRES_DB=greetings_8z8k
+      - POSTGRES_USER=greetings_8z8k_user
+      - POSTGRES_PASSWORD=8dscDoSEle05Gd2o4BSKOjXdQrmNI2NH
     ports:
       - "5432:5432"
     healthcheck:
@@ -28,9 +28,9 @@ services:
     depends_on:
       - postgres
     environment:
-      - SPRING_DATASOURCE_URL=jdbc:postgresql://dpg-cr1c183qf0us73flel0g-a:5432/greetings_006i
-      - SPRING_DATASOURCE_USERNAME=greetings_006i_user
-      - SPRING_DATASOURCE_PASSWORD=0w3KpbWU691HEOZRxqaOb5l6Ypv92ssY
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://dpg-cr1cmbrqf0us73fll1mg-a:5432/greetings_8z8k
+      - SPRING_DATASOURCE_USERNAME=greetings_8z8k_user
+      - SPRING_DATASOURCE_PASSWORD=8dscDoSEle05Gd2o4BSKOjXdQrmNI2NH
     healthcheck:
       test: ["CMD-SHELL", "curl -f http://localhost:8080 || exit 1"]
       interval: 10s

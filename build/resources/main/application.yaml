@@ -10,9 +10,9 @@ spring:
     show-sql: true
 
   datasource:
-    url: jdbc:postgresql://dpg-cr1c183qf0us73flel0g-a:5432/greetings_006i
-    username: greetings_006i_user
-    password: 0w3KpbWU691HEOZRxqaOb5l6Ypv92ssY
+    url: jdbc:postgresql://dpg-cr1cmbrqf0us73fll1mg-a:5432/greetings_8z8k
+    username: greetings_8z8k_user
+    password: 8dscDoSEle05Gd2o4BSKOjXdQrmNI2NH
   flyway:
     jdbc-properties:
       enabled: true

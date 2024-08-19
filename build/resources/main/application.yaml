@@ -1,0 +1,23 @@
+spring:
+  servlet:
+    multipart:
+      max-file-size: 10240MB
+      max-request-size: 102400MB
+  jpa:
+    properties:
+      hibernate:
+        format_sql: true
+    show-sql: true
+
+  datasource:
+    url: jdbc:postgresql://dpg-cr1c183qf0us73flel0g-a:5432/greetings_006i
+    username: greetings_006i_user
+    password: 0w3KpbWU691HEOZRxqaOb5l6Ypv92ssY
+  flyway:
+    jdbc-properties:
+      enabled: true
+      locations:
+        - db.migration
+  web:
+    resources:
+      static-locations: classpath:/static/, file:./uploads/

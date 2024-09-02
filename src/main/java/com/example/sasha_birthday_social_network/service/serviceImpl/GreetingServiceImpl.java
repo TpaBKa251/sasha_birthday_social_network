@@ -46,27 +46,22 @@ public class GreetingServiceImpl implements GreetingService {
                 .toList();
     }
 
-    // Метод для сохранения файла на сервере и возврата URL
     private String saveFile(MultipartFile file) throws IOException {
         if (file.isEmpty()) {
             return null;
         }
 
-        // Генерация уникального имени файла
         String fileName = UUID.randomUUID() + "_" + file.getOriginalFilename();
 
-        // Путь к директории uploads
         String uploadDir = "uploads";
         Path uploadPath = Paths.get(uploadDir);
         if (!Files.exists(uploadPath)) {
             Files.createDirectories(uploadPath);
         }
 
-        // Сохранение файла
         Path filePath = uploadPath.resolve(fileName);
         Files.copy(file.getInputStream(), filePath, StandardCopyOption.REPLACE_EXISTING);
 
-        // Возврат URL файла
         return "/uploads/" + fileName;
     }
 }

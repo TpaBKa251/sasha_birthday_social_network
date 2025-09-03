@@ -4,9 +4,11 @@ import com.example.sasha_birthday_social_network.dto.answer.AnswerGreeting;
 import com.example.sasha_birthday_social_network.dto.request.GreetingDto;
 import com.example.sasha_birthday_social_network.service.GreetingService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
@@ -14,6 +16,12 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.IOException;
 import java.util.List;
 
+@CrossOrigin(
+        origins = "https://hakaton-zeta.vercel.app",
+        allowedHeaders = "*",
+        methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE, RequestMethod.OPTIONS},
+        allowCredentials = "true"
+)
 @RestController
 @RequestMapping("sasha/birthday/social/network")
 @RequiredArgsConstructor

@@ -10,7 +10,7 @@ public class CorsConfig implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**")
-                .allowedOrigins("https://sasha-birthday-greetings.onrender.com", "https://sasha-birthday-greeting-add.onrender.com") // Укажите ваш фронтенд сервер
+                .allowedOrigins("https://hakaton-zeta.vercel.app") // Укажите ваш фронтенд сервер
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                 .allowedHeaders("*")
                 .allowCredentials(true);

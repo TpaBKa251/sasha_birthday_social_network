@@ -1,0 +1,22 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: gateway-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/auth-response-headers: "Authorization" # если нужно передавать авторизационные заголовки
+spec:
+  rules:
+    - host: hackaton-zeta.ru  # укажи свой домен
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: gateway
+                port:
+                  number: 80  # Сервер слушает на порту 80, но будет направлен на 443 через Ingress
+  tls:
+    - hosts:
+        - hackaton-zeta.ru
+      secretName: my-ssl-secret  # Это имя Kubernetes секрета, который содержит SSL сертификат

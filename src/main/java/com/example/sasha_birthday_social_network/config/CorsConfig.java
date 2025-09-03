@@ -12,7 +12,7 @@ public class CorsConfig implements WebMvcConfigurer {
         registry.addMapping("/**")
                 .allowedOrigins("https://hakaton-zeta.vercel.app") // Укажите ваш фронтенд сервер
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
-                .allowedHeaders("*")
+                .allowedHeaders("Authorization", "Content-Type")
                 .allowCredentials(true);
     }
 }

@@ -21,7 +21,7 @@ spec:   # Запускаем 1 новый pod перед удалением ст
       automountServiceAccountToken: false  # отключаем автоматическое монтирование, если не нужно
       containers:
         - name: gateway
-          image: my-gateway:latest
+          image: sasha_birthday_social_network-webapi:latest
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8080
